@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     unzip
 
 COPY . /usr/share/nginx/html
-COPY default.conf /etc/nginx/conf.d/default.conf
+#COPY default.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 
