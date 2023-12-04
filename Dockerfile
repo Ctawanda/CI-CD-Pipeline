@@ -3,7 +3,12 @@ FROM nginx:latest
 RUN apt-get update && apt-get install -y
 
 COPY . /usr/share/nginx/html
-#COPY default.conf /etc/nginx/conf.d/default.conf
+
+# Remove the default Nginx configuration
+RUN rm /etc/nginx/conf.d/default.conf
+
+# Copy your custom configuration to the container
+COPY default.conf /etc/nginx/conf.d/
 
 EXPOSE 80
 
